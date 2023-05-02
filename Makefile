@@ -2,7 +2,7 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra 
+FLAGS = -Wall -Werror -Wextra
 LIBRARIES = -lmlx -lm -lft -L$(LIBFT_DIRECTORY) -L$(MINILIBX_DIRECTORY) -framework OpenGL -framework AppKit
 INCLUDES = -I$(HEADER_DIRECTORY) -I$(LIBFT_HEADER) -I$(MINILBX_HEADER)
 
@@ -19,7 +19,8 @@ HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
 SOURCES_DIRECTORY = ./sources/
-SOURCES_LIST = 	fdf.c utils.c
+SOURCES_LIST = 	fdf_bonus.c utils.c set.c\
+				map_reader.c
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
 OBJECTS_DIRECTORY = objects/
@@ -57,6 +58,8 @@ fclean: clean
 re: 
 	@$(MAKE) fclean
 	@$(MAKE) all
+
+.PHONY: all clean fclean re
 
 
 

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_malloczero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 13:43:52 by plertsir         ###   ########.fr       */
+/*   Created: 2023/05/02 16:34:07 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/02 16:40:59 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
+#include "libft.h"
 #include <stdlib.h>
-#include <errno.h>
-#include <stdio.h>
 
-void	force_quit(char *s)
+void	*malloczero(size_t size)
 {
-	if (errno == 0)
-		ft_putendl_fd(s, 2);
-	else
-		perror(s);
-	exit(1);
+	void	*dst;
+
+	dst = malloc(size);
+	if (dst)
+		ft_bzero(dst, size);
+	return (dst);
 }

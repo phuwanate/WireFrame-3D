@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   set.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 13:43:52 by plertsir         ###   ########.fr       */
+/*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/02 16:43:00 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/fdf.h"
+#include "../mlx/mlx.h"
 #include "../libft/libft.h"
-#include <stdlib.h>
-#include <errno.h>
-#include <stdio.h>
+#include "../includes/error.h"
 
-void	force_quit(char *s)
+t_map	*map_set(void)
 {
-	if (errno == 0)
-		ft_putendl_fd(s, 2);
-	else
-		perror(s);
-	exit(1);
+	t_map	*map;
+
+	map = (t_map *)malloczero(sizeof(t_map));
+	if (!(map))
+		force_quit(MAP_SET);
+	map->width = 0;
+	map->height = 0;
+	map->z_min = FT_INT_MAX;
+	map->z_max = FT_INT_MIN;
+	return (map);
 }
+

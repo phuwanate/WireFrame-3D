@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   fdf_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 13:43:52 by plertsir         ###   ########.fr       */
+/*   Created: 2023/05/02 13:43:34 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/02 15:09:54 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <stdlib.h>
+#include "../includes/fdf.h"
+#include "../includes/error.h"
+#include "../mlx/mlx.h"
+#include <fcntl.h>
 #include <errno.h>
-#include <stdio.h>
 
-void	force_quit(char *s)
+int	main(int ac, char *av[])
 {
-	if (errno == 0)
-		ft_putendl_fd(s, 2);
-	else
-		perror(s);
-	exit(1);
+	int				fd;
+	t_map			*map;
+	t_coord_z		*z_stack;	
+
+	if (ac == 2)
+	{
+		errno = 0;
+		fd = open(av[1], O_RDONLY);
+		if (fd < 0)
+			force_quit(MAP_FDF);
+		map = map_set();
+		if (read_map(fd, &z_stack, map) == -1)
+			force_quit(MAP_READ);
+	}
+	force_quit(PARAMETER);
+	return (0);
 }
