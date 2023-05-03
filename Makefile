@@ -19,8 +19,8 @@ HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
 SOURCES_DIRECTORY = ./sources/
-SOURCES_LIST = 	fdf_bonus.c utils.c set.c\
-				map_reader.c
+SOURCES_LIST = 	fdf_bonus.c utils.c set.c map_reader.c stack_reader.c\
+				base_checker.c
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
 OBJECTS_DIRECTORY = objects/

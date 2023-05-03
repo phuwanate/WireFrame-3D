@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 15:33:44 by plertsir          #+#    #+#             */
-/*   Updated: 2023/03/29 13:17:27 by plertsir         ###   ########.fr       */
+/*   Created: 2023/03/10 18:15:40 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/02 22:09:05 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 char	*read_file(int fd, char *buff, char *stash)
 {
@@ -76,3 +76,24 @@ char	*get_next_line(int fd)
 		stash[fd] = ft_clean(line);
 	return (line);
 }
+/*
+#include <stdio.h>
+#include <fcntl.h>
+
+int main()
+{
+	int	fd;
+	char	*line;
+	int		status;
+	
+	fd = open("get_next_line.c", O_RDWR);
+
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		printf("%s", line);
+	}
+}
+*/
