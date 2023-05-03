@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/03 12:35:09 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:45:09 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 #include <stdlib.h>
-
 
 static void	free_split(char **arr)
 {
@@ -29,7 +28,6 @@ static void	free_split(char **arr)
 	}
 	free(arr);
 }
-#include <stdio.h>
 
 static t_coord_z	*new_stack(char *s)
 {
@@ -72,8 +70,10 @@ static void	line_tostack(char **line_split, t_coord_z **z_stack, t_map *map)
 	width = 0;
 	while (*line_split)
 	{
-		stack_add(z_stack, new_stack(*(line_split++)));
-		width++;
+		stack_add(z_stack, new_stack(*(line_split)));
+		if (**line_split != '\n')
+			width++;
+		line_split++;
 	}
 	if (map->height == 0)
 		map->width = width;
