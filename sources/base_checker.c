@@ -6,63 +6,67 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:59:41 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/03 00:56:54 by first            ###   ########.fr       */
+/*   Updated: 2023/05/03 11:54:30 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include "../libft/libft.h"
 
-static int ft_isbase(char s, int base)
+static int	ft_isbase(char s, int base)
 {
-	char	*base_num = "0123456789ABCDEF";
+	char	*base_num;
 	int		i;
 
+	base_num = "0123456789ABCDEF";
+
 	i = 0;
-	if(s >= 'a' && s <= 'z')
-		s = s - 32;
-	while(i < base)
+	while (i < base)
 	{
-		if (base_num[i] == s)
+		if (base_num[i] == ft_toupper(s) || base_num[i] == '\n')
 			return (i);
 		i++;
 	}
 	return (-1);
 }
 
-int	ft_isvalid(char *s, int base)
+static int	ft_prefix(char *s, int base)
 {
-	size_t	i;
-	size_t	digits;
+	int	i;
 
 	i = 0;
-	digits = 0;
-	while ((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\t') || (s[i] == '\v')
-		|| (s[i] == '\f') || (s[i] == '\r'))
+	if (s[i] == '0')
 		i++;
-	if (base == 16)
-		i += 2;
-	else if (base == 10 && (s[i] == '-' || s[i] == '+'))
-		i++;
-	while(ft_isbase(s[i], base) >= 0)
-	{
-		i++;
-		digits++;
-	}
-	if((!(s[i])) && (digits))
+	if ((base == 16) && (s[i] == 'X' || s[i] == 'x'))
 		return (1);
 	return (0);
 }
-
-static int ft_prefix(char *s, int base)
+#include <stdio.h>
+int	ft_isvalid(char *s, int base)
 {
-	int i = 0;
+	size_t	i;
+	size_t	digit;
 
-	if(s[i] == '0')
+	i = 0;
+	digit = 0;
+	while ((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\t') || (s[i] == '\v')
+		|| (s[i] == '\f') || (s[i] == '\r'))
 		i++;
-	if((base == 16) && (s[i] == 'X' || s[i] == 'x'))
-		return(1);
-	return(0);
+	if (base != 10 && !ft_prefix(&s[i], base))
+		return (0);
+	if (base == 2 || base == 16)
+		i += 2;
+	else if (base == 10 && (s[i] == '-' || s[i] == '+'))
+		i++;
+	while (ft_isbase(s[i], base) >= 0)
+	{
+		i++;
+		digit++;
+	}
+	if ((s[i] == '\0') || digit)
+		return (1);
+	else
+		return (0);
 }
 
 int	ft_atoi_base(char *s, int base)
@@ -75,10 +79,10 @@ int	ft_atoi_base(char *s, int base)
 	while ((s[i] == ' ') || (s[i] == '\n') || (s[i] == '\t') || (s[i] == '\v')
 		|| (s[i] == '\f') || (s[i] == '\r'))
 		i++;
-	if(ft_prefix(&s[i], base) == 0)
+	if (ft_prefix(&s[i], base) == 0)
 		return (0);
 	i += 2;
-	while(ft_isbase(s[i], base) >= 0)
+	while (ft_isbase(s[i], base) >= 0)
 	{
 		result = result * base + ft_isbase(s[i], base);
 		i++;

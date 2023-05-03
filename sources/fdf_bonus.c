@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 15:09:54 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/03 10:02:00 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int ac, char *av[])
 {
 	int				fd;
 	t_map			*map;
+	// t_fdf			*fdf;
 	t_coord_z		*z_stack;	
 
 	if (ac == 2)
@@ -29,9 +30,9 @@ int	main(int ac, char *av[])
 		if (fd < 0)
 			force_quit(MAP_FDF);
 		map = map_set();
-		if (read_map(fd, &z_stack, map) == -1)
-			force_quit(MAP_READ);
+		read_map(fd, &z_stack, map); 
 	}
-	force_quit(PARAMETER);
+	else
+		force_quit(PARAMETER);
 	return (0);
 }
