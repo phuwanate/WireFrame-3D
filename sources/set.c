@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 16:43:00 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:34:58 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../mlx/mlx.h"
 #include "../libft/libft.h"
 #include "../includes/error.h"
+#include <stdio.h>
 
 t_map	*map_set(void)
 {
@@ -29,3 +30,51 @@ t_map	*map_set(void)
 	return (map);
 }
 
+t_fdf	*fdf_set(t_map *map)
+{
+	t_fdf	*fdf;
+
+	fdf = (t_fdf *)malloczero(sizeof(t_fdf));
+	if (!fdf)
+		force_quit(FDF_SET);
+	fdf->mlx = mlx_init();
+	if (!fdf->mlx)
+		force_quit(FDF_SET);
+	fdf->win = mlx_new_window(fdf->mlx, WIDTH, HEIGHT, "FdF");
+	if (!fdf->win)
+		force_quit(FDF_SET);
+	fdf->img = mlx_new_image(fdf->mlx, WIDTH, HEIGHT);
+	if (!fdf->img)
+		force_quit(FDF_SET);
+	fdf->data_addr = mlx_get_data_addr(fdf->img, &(fdf->bits_per_pixel),
+			&(fdf->size_line), &(fdf->endian));
+	fdf->map = map;
+	fdf->mouse = (t_mouse *)malloczero(sizeof(t_mouse));
+	if (!fdf->mouse)
+		force_quit(FDF_SET);
+	return (fdf);
+}
+
+t_camera	*camera_set(t_fdf *fdf)
+{
+	t_camera	*camera;
+	size_t		a;
+	size_t		b;
+
+	a = (WIDTH - MENU) / fdf->map->width / 2;
+	b = HEIGHT / fdf->map->height / 2;
+	camera = (t_camera *)malloczero(sizeof(t_camera));
+	if (!camera)
+		force_quit(CAM_SET);
+	if (a < b)
+		camera->scale = a;
+	else
+		camera->scale = b;
+	camera->alpha = 0;
+	camera->beta = 0;
+	camera->gamma = 0;
+	camera->z_height = 1;
+	camera->x_offset = 0;
+	camera->y_offset = 0;
+	return (camera);
+}

@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/03 17:45:09 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:56:22 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 static void	free_split(char **arr)
 {

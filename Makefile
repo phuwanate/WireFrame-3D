@@ -14,13 +14,13 @@ MINILIBX = $(MINILIBX_DIRECTORY)libmlx.a
 MINILIBX_DIRECTORY = ./mlx/
 MINILBX_HEADER = $(MINILIBX_DIRECTORY)
 
-HEADERS_LIST = fdf.h
+HEADERS_LIST = fdf.h error.h color.h
 HEADERS_DIRECTORY = ./includes/
 HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
 SOURCES_DIRECTORY = ./sources/
 SOURCES_LIST = 	fdf_bonus.c utils.c set.c map_reader.c stack_reader.c\
-				base_checker.c
+				base_checker.c make_arr.c draw_map.c
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
 OBJECTS_DIRECTORY = objects/
