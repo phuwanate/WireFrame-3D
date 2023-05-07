@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 16:34:58 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/06 23:17:20 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_map	*map_set(void)
 		force_quit(MAP_SET);
 	map->width = 0;
 	map->height = 0;
+	map->coord = NULL;
+	map->colors = NULL;
 	map->z_min = FT_INT_MAX;
 	map->z_max = FT_INT_MIN;
 	return (map);
@@ -40,7 +42,7 @@ t_fdf	*fdf_set(t_map *map)
 	fdf->mlx = mlx_init();
 	if (!fdf->mlx)
 		force_quit(FDF_SET);
-	fdf->win = mlx_new_window(fdf->mlx, WIDTH, HEIGHT, "FdF");
+	fdf->win = mlx_new_window(fdf->mlx, 1920, 1080, "FdF");
 	if (!fdf->win)
 		force_quit(FDF_SET);
 	fdf->img = mlx_new_image(fdf->mlx, WIDTH, HEIGHT);
@@ -68,7 +70,7 @@ t_camera	*camera_set(t_fdf *fdf)
 		force_quit(CAM_SET);
 	if (a < b)
 		camera->scale = a;
-	else
+	else if (b < a)
 		camera->scale = b;
 	camera->alpha = 0;
 	camera->beta = 0;

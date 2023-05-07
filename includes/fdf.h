@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:46:33 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 19:57:48 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/07 10:20:59 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 # define FDF_H
 
-# define WIDTH 1920
+# define WIDTH	1920
 # define HEIGHT 1080
-# define MENU 200
+# define MENU 	270
 
 # define FT_INT_MAX 2147483647
 # define FT_INT_MIN -2147483648
 
 typedef enum s_projection
 {
-	iso,
-	parrallel
+	ISO,
+	PARA
 }						t_projection;
 
 typedef struct s_point
@@ -37,6 +37,7 @@ typedef struct s_point
 
 typedef struct s_camera
 {
+	t_projection		proj_type;
 	int					scale;
 	double				alpha;
 	double				beta;
@@ -97,5 +98,24 @@ t_fdf		*fdf_set(t_map *map);
 t_coord_z	*pick_stack(t_coord_z **z_stack);
 t_camera	*camera_set(t_fdf *fdf);
 void		draw_map(t_map *map, t_fdf *fdf);
+int			absolute(int nb);
+int 		ft_ismin(int x, int y);
+void		scale(int event, t_fdf *fdf);
+void		translate(int event, t_fdf *fdf);
+void 		rotate(int event, t_fdf *fdf);
+void 		altitude(int event, t_fdf *fdf);
+void 		projection_type(int event, t_fdf *fdf);
+int			key_press(int key, void *param);
+int 		mouse_press(int event, int x, int y, void *param);
+int			mouse_release(int event, int x, int y, void *param);
+int 		mouse_update(int x, int y, void *param);
+int			close_win(void *param);
+int			get_color(t_point cur, t_point start, t_point end, t_point distance);
+t_point		plot_xyz(t_point point, t_fdf *fdf);
+t_point		get_point(int x, int y, t_map *map);
+void		put_menu(t_fdf *fdf);
+int			default_color(int z, t_map *map);
+double		percent(int start, int end, int curr);
+void		control(t_fdf *fdf);
 
 #endif

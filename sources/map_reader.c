@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 13:56:22 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/06 22:49:35 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../includes/fdf.h"
 #include "../includes/error.h"
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 static void	free_split(char **arr)
 {
@@ -92,7 +92,6 @@ int	read_map(int fd, t_coord_z **z_stack, t_map *map)
 		line = get_next_line(fd);
 		if (line)
 		{
-			printf("%s", line);
 			line_split = ft_split(line, ' ');
 			if (!line_split)
 				force_quit(MAP_READ);

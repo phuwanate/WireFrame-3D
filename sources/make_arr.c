@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:52 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 16:39:49 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/07 10:04:47 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,24 @@
 #include "../includes/error.h"
 #include <stdlib.h>
 
-static void	check_malloc(void *arr)
+static void	check_malloc(int *arr)
 {
 	if (!arr)
 		force_quit(CONV_ARR);
+}
+
+static int update_zmax(int top, int max)
+{
+	if (top > max)
+		return (top);
+	return (max);
+}
+
+static int update_zmin(int top, int min)
+{
+	if (top < min)
+		return (top);
+	return (min);
 }
 
 void	stack_to_arr(t_coord_z **z_stack, t_map *map)
@@ -41,11 +55,11 @@ void	stack_to_arr(t_coord_z **z_stack, t_map *map)
 		{
 			map->coord[i] = top->z;
 			map->colors[i] = top->color;
-			if (top->z > map->z_max)
-				map->z_max = top->z;
-			if (top->z < map->z_min)
-				map->z_min = top->z;
+			map->z_max = update_zmax(top->z, map->z_max);
+			map->z_min = update_zmin(top->z, map->z_min);
 		}
+		else
+			break;
 		i--;
 		free(top);
 	}

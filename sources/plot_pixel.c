@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:41:50 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 19:57:49 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/07 11:44:57 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,18 @@ static void	z_rotate(int *x, int *y, double gamma)
 	old_x = *x;
 	old_y = *y;
 	*x = old_x * cos(gamma) - old_y * sin(gamma);
-	*y = old_x * sin(gamma) - old_y * cos(gamma);
+	*y = old_x * sin(gamma) + old_y * cos(gamma);
+}
+
+static void iso(int *x, int *y, int z)
+{
+	int	old_x;
+	int	old_y;
+
+	old_x = *x;
+	old_y = *y;
+	*x = (old_x - old_y) * cos(0.523599);
+	*y = -z + (old_x + old_y) * sin(0.523588);
 }
 
 t_point	plot_xyz(t_point point, t_fdf *fdf)
@@ -51,8 +62,11 @@ t_point	plot_xyz(t_point point, t_fdf *fdf)
 	point.y -= (fdf->map->height * fdf->camera->scale) / 2;
 	x_rotate(&point.y, &point.z, fdf->camera->alpha);
 	y_rotate(&point.x, &point.z, fdf->camera->beta);
-	x_rotate(&point.x, &point.y, fdf->camera->gamma);
-	if (fdf->camera->projection == ISOMETRIC)
-		iso(&point.x, &point.y, &pointz);
-		
+	z_rotate(&point.x, &point.y, fdf->camera->gamma);
+	if (fdf->camera->proj_type == ISO)
+		iso(&point.x, &point.y, point.z);
+	point.x += (WIDTH - MENU) / 2 + fdf->camera->x_offset + MENU;
+	point.y += (HEIGHT + fdf->map->height * fdf->camera->scale) / 2
+		+ fdf->camera->y_offset;
+	return (point);
 }

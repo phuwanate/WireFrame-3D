@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 18:13:01 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/07 11:41:18 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_point	get_point(int x, int y, t_map *map)
 	t_point		point;
 	int			index;
 
-	index = (y * map->width) + x;
+	index = y * map->width + x;
 	point.x = x;
 	point.y = y;
 	point.z = map->coord[index];
@@ -52,4 +52,19 @@ t_point	get_point(int x, int y, t_map *map)
 	else
 		point.colors = map->colors[index];
 	return (point);
+}
+
+int absolute(int nb)
+{
+	if(nb < 0)
+		return (-nb);
+	return (nb);
+}
+
+int ft_ismin(int x, int y)
+{
+	if(x < y)
+		return (1);
+	else
+		return (-1);
 }

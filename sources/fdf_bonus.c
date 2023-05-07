@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/04 16:38:12 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/07 14:42:46 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char *av[])
 		stack_to_arr(&z_stack, map);
 		fdf->camera = camera_set(fdf);
 		draw_map(fdf->map, fdf);
+		control(fdf);
 		mlx_loop(fdf->mlx);
 	}
 	else
