@@ -68,10 +68,6 @@ t_camera	*camera_set(t_fdf *fdf)
 	camera = (t_camera *)malloczero(sizeof(t_camera));
 	if (!camera)
 		force_quit(CAM_SET);
-	/*if((WIDTH - MENU) / fdf->map->width / 2 < HEIGHT / fdf->map->height / 2)
-		camera->scale = (WIDTH - MENU) / fdf->map->width / 2;
-	else
-		camera->scale = (HEIGHT / fdf->map->height / 2);*/
 	if (a < b)
 		camera->scale = a;
 	else
