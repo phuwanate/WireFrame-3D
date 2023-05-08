@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/06 23:17:20 by first            ###   ########.fr       */
+/*   Updated: 2023/05/08 23:40:30 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,21 @@ t_fdf	*fdf_set(t_map *map)
 t_camera	*camera_set(t_fdf *fdf)
 {
 	t_camera	*camera;
-	size_t		a;
-	size_t		b;
+	int		a;
+	int		b;
 
 	a = (WIDTH - MENU) / fdf->map->width / 2;
 	b = HEIGHT / fdf->map->height / 2;
 	camera = (t_camera *)malloczero(sizeof(t_camera));
 	if (!camera)
 		force_quit(CAM_SET);
+	/*if((WIDTH - MENU) / fdf->map->width / 2 < HEIGHT / fdf->map->height / 2)
+		camera->scale = (WIDTH - MENU) / fdf->map->width / 2;
+	else
+		camera->scale = (HEIGHT / fdf->map->height / 2);*/
 	if (a < b)
 		camera->scale = a;
-	else if (b < a)
+	else
 		camera->scale = b;
 	camera->alpha = 0;
 	camera->beta = 0;

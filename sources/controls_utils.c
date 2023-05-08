@@ -44,14 +44,14 @@ void rotate(int event, t_fdf *fdf)
 
 void altitude(int event, t_fdf *fdf)
 {
-	if (event == KEY_MORE_THAN)
-		fdf->camera->z_height += 0.1;
-	else if (event == KEY_LESS_THAN)
+	if (event == KEY_LESS_THAN)
 		fdf->camera->z_height -= 0.1;
-	if (fdf->camera->z_height > 10)
-		fdf->camera->z_height = 10;
-	else if (fdf->camera->z_height < 0.1)
+	else if (event == KEY_MORE_THAN)
+		fdf->camera->z_height += 0.1;
+	if (fdf->camera->z_height < 0.1)
 		fdf->camera->z_height = 0.1;
+	else if (fdf->camera->z_height > 10)
+		fdf->camera->z_height = 10;
 	draw_map(fdf->map, fdf);
 }
 

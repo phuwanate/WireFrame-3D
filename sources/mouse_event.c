@@ -39,7 +39,7 @@ int mouse_update(int x, int y, void *param)
 	if (fdf->mouse->is_pressed != 0)
 	{
 		fdf->camera->beta += (x - fdf->mouse->old_x) * 0.002;
-		fdf->camera->beta += (y - fdf->mouse->old_y) * 0.002;
+		fdf->camera->alpha += (y - fdf->mouse->old_y) * 0.002;
 		draw_map(fdf->map, fdf);
 	}
 	return (0);

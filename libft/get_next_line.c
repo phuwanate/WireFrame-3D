@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 18:15:40 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/02 22:09:05 by first            ###   ########.fr       */
+/*   Updated: 2023/05/08 23:48:06 by first            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_clean(char *line)
 		free(stash);
 		stash = NULL;
 	}
-	line[i + 1] = '\0';
+	line[i] = '\0';
 	return (stash);
 }
 
