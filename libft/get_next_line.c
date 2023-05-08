@@ -76,24 +76,3 @@ char	*get_next_line(int fd)
 		stash[fd] = ft_clean(line);
 	return (line);
 }
-/*
-#include <stdio.h>
-#include <fcntl.h>
-
-int main()
-{
-	int	fd;
-	char	*line;
-	int		status;
-	
-	fd = open("get_next_line.c", O_RDWR);
-
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		printf("%s", line);
-	}
-}
-*/
