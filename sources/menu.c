@@ -1,6 +1,18 @@
-#include "../includes/fdf.h"
-#include "../mlx/mlx.h"
-#include "../includes/color.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   menu.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/09 10:15:47 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/09 10:45:22 by plertsir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+#include "mlx.h"
+#include "color.h"
 
 void	put_menu(t_fdf *fdf)
 {
@@ -11,7 +23,6 @@ void	put_menu(t_fdf *fdf)
 	y = 0;
 	mlx = fdf->mlx;
 	win = fdf->win;
-
 	mlx_string_put(mlx, win, 65, y += 20, TEXT, "Control Guide");
 	mlx_string_put(mlx, win, 15, y += 35, TEXT, "Scale x, y: Scroll or +/-");
 	mlx_string_put(mlx, win, 15, y += 30, TEXT, "Translate: Arrows");

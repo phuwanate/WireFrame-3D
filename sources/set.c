@@ -6,14 +6,14 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/08 23:40:30 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:46:08 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../mlx/mlx.h"
-#include "../libft/libft.h"
-#include "../includes/error.h"
+#include "fdf.h"
+#include "mlx.h"
+#include "libft.h"
+#include "error.h"
 #include <stdio.h>
 
 t_map	*map_set(void)
@@ -60,8 +60,8 @@ t_fdf	*fdf_set(t_map *map)
 t_camera	*camera_set(t_fdf *fdf)
 {
 	t_camera	*camera;
-	int		a;
-	int		b;
+	int			a;
+	int			b;
 
 	a = (WIDTH - MENU) / fdf->map->width / 2;
 	b = HEIGHT / fdf->map->height / 2;

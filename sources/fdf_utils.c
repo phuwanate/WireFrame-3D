@@ -6,12 +6,12 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/07 11:41:18 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:43:58 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../includes/fdf.h"
+#include "libft.h"
+#include "fdf.h"
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>
@@ -54,16 +54,16 @@ t_point	get_point(int x, int y, t_map *map)
 	return (point);
 }
 
-int absolute(int nb)
+int	absolute(int nb)
 {
-	if(nb < 0)
+	if (nb < 0)
 		return (-nb);
 	return (nb);
 }
 
-int ft_ismin(int x, int y)
+int	ft_ismin(int x, int y)
 {
-	if(x < y)
+	if (x < y)
 		return (1);
 	else
 		return (-1);

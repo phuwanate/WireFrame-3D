@@ -1,7 +1,19 @@
-#include "../includes/fdf.h"
-#include "../includes/keyboard.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mouse_event.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/09 10:28:02 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/09 10:45:38 by plertsir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int mouse_press(int event, int x, int y, void *param)
+#include "fdf.h"
+#include "keyboard.h"
+
+int	mouse_press(int event, int x, int y, void *param)
 {
 	t_fdf	*fdf;
 
@@ -15,7 +27,7 @@ int mouse_press(int event, int x, int y, void *param)
 	return (0);
 }
 
-int mouse_release(int event, int x, int y, void *param)
+int	mouse_release(int event, int x, int y, void *param)
 {
 	t_fdf	*fdf;
 
@@ -24,10 +36,10 @@ int mouse_release(int event, int x, int y, void *param)
 	(void)event;
 	fdf = (t_fdf *)param;
 	fdf->mouse->is_pressed = 0;
-	return(0);
+	return (0);
 }
 
-int mouse_update(int x, int y, void *param)
+int	mouse_update(int x, int y, void *param)
 {
 	t_fdf	*fdf;
 

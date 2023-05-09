@@ -6,13 +6,13 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/07 14:42:46 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:42:15 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../includes/error.h"
-#include "../mlx/mlx.h"
+#include "fdf.h"
+#include "error.h"
+#include "mlx.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <errno.h>

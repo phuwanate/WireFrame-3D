@@ -1,5 +1,17 @@
-#include "../includes/fdf.h"
-#include "../mlx/mlx.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   controls.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/09 10:23:52 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/09 10:43:16 by plertsir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+#include "mlx.h"
 #include <stdlib.h>
 
 int	close_win(void *param)

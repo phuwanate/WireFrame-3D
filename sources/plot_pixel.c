@@ -6,11 +6,11 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:41:50 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/08 23:21:51 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:45:48 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
+#include "fdf.h"
 #include "math.h"
 
 static void	x_rotate(int *y, int *z, double alpha)
@@ -42,7 +42,7 @@ static void	z_rotate(int *x, int *y, double gamma)
 	*y = old_x * sin(gamma) + old_y * cos(gamma);
 }
 
-static void iso(int *x, int *y, int z)
+static void	iso(int *x, int *y, int z)
 {
 	int	old_x;
 	int	old_y;
@@ -66,6 +66,7 @@ t_point	plot_xyz(t_point point, t_fdf *fdf)
 	if (fdf->camera->proj_type == ISO)
 		iso(&point.x, &point.y, point.z);
 	point.x += (WIDTH - MENU) / 2 + fdf->camera->x_offset + MENU;
-	point.y += (HEIGHT + fdf->map->height * fdf->camera->scale) / 2 + fdf->camera->y_offset;
+	point.y += (HEIGHT + fdf->map->height * fdf->camera->scale) / 2
+		+ fdf->camera->y_offset;
 	return (point);
 }

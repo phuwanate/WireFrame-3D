@@ -6,14 +6,14 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:52 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/07 10:04:47 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:44:45 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../includes/fdf.h"
-#include "../mlx/mlx.h"
-#include "../includes/error.h"
+#include "libft.h"
+#include "fdf.h"
+#include "mlx.h"
+#include "error.h"
 #include <stdlib.h>
 
 static void	check_malloc(int *arr)
@@ -22,14 +22,14 @@ static void	check_malloc(int *arr)
 		force_quit(CONV_ARR);
 }
 
-static int update_zmax(int top, int max)
+static int	update_zmax(int top, int max)
 {
 	if (top > max)
 		return (top);
 	return (max);
 }
 
-static int update_zmin(int top, int min)
+static int	update_zmin(int top, int min)
 {
 	if (top < min)
 		return (top);
@@ -59,7 +59,7 @@ void	stack_to_arr(t_coord_z **z_stack, t_map *map)
 			map->z_min = update_zmin(top->z, map->z_min);
 		}
 		else
-			break;
+			break ;
 		i--;
 		free(top);
 	}

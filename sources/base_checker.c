@@ -6,12 +6,12 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:59:41 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/03 11:54:30 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/09 10:42:47 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fdf.h"
-#include "../libft/libft.h"
+#include "fdf.h"
+#include "libft.h"
 
 static int	ft_isbase(char s, int base)
 {
@@ -19,7 +19,6 @@ static int	ft_isbase(char s, int base)
 	int		i;
 
 	base_num = "0123456789ABCDEF";
-
 	i = 0;
 	while (i < base)
 	{
@@ -41,7 +40,7 @@ static int	ft_prefix(char *s, int base)
 		return (1);
 	return (0);
 }
-#include <stdio.h>
+
 int	ft_isvalid(char *s, int base)
 {
 	size_t	i;

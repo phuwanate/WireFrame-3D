@@ -6,16 +6,15 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/06 22:49:35 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:45:06 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/get_next_line.h"
-#include "../libft/libft.h"
-#include "../includes/fdf.h"
-#include "../includes/error.h"
+#include "get_next_line.h"
+#include "libft.h"
+#include "fdf.h"
+#include "error.h"
 #include <stdlib.h>
-//#include <stdio.h>
 
 static void	free_split(char **arr)
 {

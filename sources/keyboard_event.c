@@ -1,6 +1,18 @@
-#include "../includes/fdf.h"
-#include "../mlx/mlx.h"
-#include "../includes/keyboard.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard_event.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/09 10:23:05 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/09 10:44:31 by plertsir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+#include "mlx.h"
+#include "keyboard.h"
 #include <stdlib.h>
 
 int	key_press(int key, void *param)
@@ -15,8 +27,8 @@ int	key_press(int key, void *param)
 	else if (key == ARROW_LEFT || key == ARROW_RIGHT
 		|| key == ARROW_DOWN || key == ARROW_UP)
 		translate(key, fdf);
-	else if (key == KEY_MAIN_1 || key == KEY_MAIN_2 
-		|| key == KEY_MAIN_3 || key == KEY_MAIN_4 
+	else if (key == KEY_MAIN_1 || key == KEY_MAIN_2
+		|| key == KEY_MAIN_3 || key == KEY_MAIN_4
 		|| key == KEY_MAIN_5 || key == KEY_MAIN_6)
 		rotate(key, fdf);
 	else if (key == KEY_MORE_THAN || key == KEY_LESS_THAN)
@@ -25,4 +37,3 @@ int	key_press(int key, void *param)
 		projection_type(key, fdf);
 	return (0);
 }
-

@@ -6,17 +6,16 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:38:17 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/07 11:32:08 by first            ###   ########.fr       */
+/*   Updated: 2023/05/09 10:43:34 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "../includes/fdf.h"
-#include "../includes/color.h"
-#include "../mlx/mlx.h"
+#include "libft.h"
+#include "fdf.h"
+#include "color.h"
+#include "mlx.h"
 
-
-static void point_init(t_point *d, t_point *u, t_point p1, t_point p2)
+static void	point_init(t_point *d, t_point *u, t_point p1, t_point p2)
 {
 	u->x = ft_ismin(p1.x, p2.x);
 	u->y = ft_ismin(p1.y, p2.y);
@@ -24,11 +23,11 @@ static void point_init(t_point *d, t_point *u, t_point p1, t_point p2)
 	d->y = absolute(p2.y - p1.y);
 }
 
-static void draw_pixel(t_fdf *fdf, int x, int y, int color)
+static void	draw_pixel(t_fdf *fdf, int x, int y, int color)
 {
 	int	i;
 
-	if(x >= MENU && x < WIDTH && y >= 0 && y < HEIGHT)
+	if ((x >= MENU) && (x < WIDTH) && (y >= 0) && (y < HEIGHT))
 	{
 		i = (x * fdf->bits_per_pixel / 8) + (y * fdf->size_line);
 		fdf->data_addr[i] = color;
@@ -37,13 +36,13 @@ static void draw_pixel(t_fdf *fdf, int x, int y, int color)
 	}
 }
 
-static void draw_line(t_point p1, t_point p2,t_fdf *fdf)
+static void	draw_line(t_point p1, t_point p2, t_fdf *fdf)
 {
 	t_point	distance;
 	t_point	update;
 	t_point	cur;
 	int		diff[2];
-	
+
 	point_init(&distance, &update, p1, p2);
 	diff[0] = distance.x - distance.y;
 	cur = p1;
@@ -75,7 +74,7 @@ static void	get_background(t_fdf *fdf)
 	while (i < WIDTH * HEIGHT)
 	{
 		if (i % WIDTH < MENU)
-			background[i] =  MENU_BACKGROUND;
+			background[i] = MENU_BACKGROUND;
 		else
 			background[i] = AVAILABLE;
 		i++;

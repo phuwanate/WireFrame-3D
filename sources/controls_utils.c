@@ -1,5 +1,17 @@
-#include "../includes/keyboard.h"
-#include "../includes/fdf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   controls_utils.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/09 10:23:43 by plertsir          #+#    #+#             */
+/*   Updated: 2023/05/09 10:42:58 by plertsir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "keyboard.h"
+#include "fdf.h"
 
 void	scale(int event, t_fdf *fdf)
 {
@@ -25,7 +37,7 @@ void	translate(int event, t_fdf *fdf)
 	draw_map(fdf->map, fdf);
 }
 
-void rotate(int event, t_fdf *fdf)
+void	rotate(int event, t_fdf *fdf)
 {
 	if (event == KEY_MAIN_1)
 		fdf->camera->alpha += 0.07;
@@ -42,7 +54,7 @@ void rotate(int event, t_fdf *fdf)
 	draw_map(fdf->map, fdf);
 }
 
-void altitude(int event, t_fdf *fdf)
+void	altitude(int event, t_fdf *fdf)
 {
 	if (event == KEY_LESS_THAN)
 		fdf->camera->z_height -= 0.1;
@@ -55,7 +67,7 @@ void altitude(int event, t_fdf *fdf)
 	draw_map(fdf->map, fdf);
 }
 
-void projection_type(int event, t_fdf *fdf)
+void	projection_type(int event, t_fdf *fdf)
 {
 	fdf->camera->alpha = 0;
 	fdf->camera->beta = 0;
