@@ -5,7 +5,7 @@ This is an example map 42.fdf :
 <img width="1042" alt="Screen Shot 2023-05-09 at 10 59 10 AM" src="https://user-images.githubusercontent.com/50509449/236990597-68a3d8be-fba0-497b-918f-0c645d47c129.png">
 
 Here the output :
-<img width="1918" alt="Screen Shot 2023-05-09 at 11 00 43 AM" src="https://user-images.githubusercontent.com/50509449/236990777-5bfab672-830b-420a-9ea3-057039434bda.png">
+<img width="1921" alt="Screen Shot 2023-05-09 at 1 13 22 PM" src="https://user-images.githubusercontent.com/50509449/237009577-37800a84-78bc-4dd4-b593-e186d2dfa31f.png">
 
 The bigger map mars.fdf :
-<img width="1921" alt="Screen Shot 2023-05-09 at 11 02 22 AM" src="https://user-images.githubusercontent.com/50509449/236991019-62f4464f-801a-4656-b112-7c12d4b6a50a.png">
+<img width="1920" alt="Screen Shot 2023-05-09 at 1 14 28 PM" src="https://user-images.githubusercontent.com/50509449/237009723-5a6496b1-49ee-4183-9592-e92d4a658036.png">
