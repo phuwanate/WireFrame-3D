@@ -37,7 +37,7 @@ void	put_menu(t_fdf *fdf)
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "Y-Axis - 3(+)/4(-)");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "Z-Axis - 5(+)/6(-)");
 	mlx_string_put(mlx, win, 15, y += 20, TEXT, "");
-	mlx_string_put(mlx, win, 15, y += 30, TEXT, "Projection:");
+	mlx_string_put(mlx, win, 15, y += 30, TEXT, "Projection");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "ISO: I Key");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "Parallel: P Key");
 }

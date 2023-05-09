@@ -21,7 +21,7 @@ HEADERS = $(addprefix $(HEADER_DIRECTORY), $(HEADER_LIST))
 
 SOURCES_DIRECTORY = ./sources/
 SOURCES_LIST = 	base_checker.c controls.c controls_utils.c draw_map.c\
-				fdf_bonus.c fdf_utils.c get_color.c keyboard_event.c\
+				fdf.c fdf_utils.c get_color.c keyboard_event.c\
 				make_arr.c map_reader.c mouse_event.c plot_pixel.c\
 				set.c stack_reader.c menu.c
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
