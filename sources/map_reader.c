@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:45:06 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:40:07 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,7 @@ static void	line_tostack(char **line_split, t_coord_z **z_stack, t_map *map)
 	while (*line_split)
 	{
 		stack_add(z_stack, new_stack(*(line_split)));
-		if (**line_split != '\n')
-			width++;
+		width++;
 		line_split++;
 	}
 	if (map->height == 0)
