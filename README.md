@@ -7,5 +7,5 @@ This is an example map 42.fdf :
 Here the output :
 <img width="1918" alt="Screen Shot 2023-05-09 at 11 00 43 AM" src="https://user-images.githubusercontent.com/50509449/236990777-5bfab672-830b-420a-9ea3-057039434bda.png">
 
-And the bigger map mars.fdf :
+The bigger map mars.fdf :
 <img width="1921" alt="Screen Shot 2023-05-09 at 11 02 22 AM" src="https://user-images.githubusercontent.com/50509449/236991019-62f4464f-801a-4656-b112-7c12d4b6a50a.png">
