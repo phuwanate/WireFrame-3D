@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:46:33 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 11:14:45 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:07:23 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # define WIDTH	1920
 # define HEIGHT 1080
-# define MENU 	270
+# define MENU 	290
 
 # define FT_INT_MAX 2147483647
 # define FT_INT_MIN -2147483648

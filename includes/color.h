@@ -6,14 +6,14 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:42:13 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 11:13:32 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:10:26 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef    COLOR_H
 # define    COLOR_H
 
-# define TEXT               0xEBEBE4         
+# define TEXT               0xFFFFFF         
 # define AVAILABLE          0x212321
 # define MENU_BACKGROUND    0x505050
 
