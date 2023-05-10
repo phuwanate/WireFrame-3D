@@ -61,7 +61,6 @@ typedef struct s_map
 	int					height;
 	int					z_min;
 	int					z_max;
-	int					ratio;
 	int					*coord;
 	int					*colors;
 
