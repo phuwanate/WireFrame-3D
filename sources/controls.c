@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:23:52 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:43:16 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:50:59 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,6 @@ void	control(t_fdf *fdf)
 	mlx_hook(fdf->win, 5, 0, mouse_release, fdf);
 	mlx_hook(fdf->win, 6, 0, mouse_update, fdf);
 }
+
+//keyboard_event.c : key_press()
+//mouse_event.c : mouse_press(), mouse_release(), mouse_update()

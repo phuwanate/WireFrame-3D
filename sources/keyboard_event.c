@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:23:05 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:44:31 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:00:06 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,6 @@ int	key_press(int key, void *param)
 		projection_type(key, fdf);
 	return (0);
 }
+
+//stdio.h: exit()
+//control_utils.c: scale(), translate(), rotate(), altitude(), projection_type()

@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:38:17 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:43:34 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:55:02 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,3 +106,10 @@ void	draw_map(t_map *map, t_fdf *fdf)
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);
 	put_menu(fdf);
 }
+
+//fdf_utils.c : get_point(), ft_ismin(), absolute()
+//plot_pixel.c: plot_xyz()
+//mlx.h: mlx_put_image_to_window()
+//menu.c: put_menu()
+//get_color.c: get_color()
+//libft.h: ft_bzero

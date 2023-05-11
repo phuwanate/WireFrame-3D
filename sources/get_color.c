@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:29:25 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:44:14 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:58:45 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,5 @@ int	get_color(t_point cur, t_point start, t_point end, t_point distance)
 			end.colors & 0xFF, percentage);
 	return ((r << 16) | (g << 8) | b);
 }
+
+//fdf_utils.c: percent()

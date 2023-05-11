@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf_bonus.c                                        :+:      :+:    :+:   */
+/*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:34 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:42:15 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:46:00 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,3 +44,11 @@ int	main(int ac, char *av[])
 		force_quit(PARAMETER);
 	return (0);
 }
+
+//fdf_utils.c  : force_quit()
+//set.c : map_set(), fdf_set(), camera_set()
+//map_reader.c : reade_map()
+//make_arr.c : stack_to_arr()
+//draw_map.c : draw_map()
+//controls.c : control()
+//mlx.h : mlx_loop()

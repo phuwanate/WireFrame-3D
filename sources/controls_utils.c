@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:23:43 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:42:58 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:48:56 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,5 @@ void	projection_type(int event, t_fdf *fdf)
 		fdf->camera->proj_type = PARA;
 	draw_map(fdf->map, fdf);
 }
+
+//draw_map.c : draw_map()

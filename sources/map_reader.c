@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 15:29:14 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 12:40:07 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:08:46 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,15 @@ static void	free_split(char **arr)
 		i++;
 	}
 	free(arr);
+}
+
+static void	ft_freeline(char **line)
+{
+	if (line != NULL && *line != NULL)
+	{
+		free(*line);
+		*line = NULL;
+	}
 }
 
 static t_coord_z	*new_stack(char *s)
@@ -52,15 +61,6 @@ static t_coord_z	*new_stack(char *s)
 	new->next = NULL;
 	free_split(z_val);
 	return (new);
-}
-
-static void	ft_freeline(char **line)
-{
-	if (line != NULL && *line != NULL)
-	{
-		free(*line);
-		*line = NULL;
-	}
 }
 
 static void	line_tostack(char **line_split, t_coord_z **z_stack, t_map *map)
@@ -105,3 +105,8 @@ int	read_map(int fd, t_coord_z **z_stack, t_map *map)
 		force_quit(MAP_FDF);
 	return (0);
 }
+
+//libft: get_next_line(), ft_split(), malloczero(), ft_atoi()
+//fdf_utils.c: force_quit()
+//base_checker.c: ft_isvalid(), ft_atoi_base()
+//stack_reader(): stack_add()

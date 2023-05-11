@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:15:47 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 13:06:01 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:09:22 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,5 @@ void	put_menu(t_fdf *fdf)
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "ISO: I Key");
 	mlx_string_put(mlx, win, 57, y += 25, TEXT, "Parallel: P Key");
 }
+
+//mlx.h: mlx_string_put()

@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:43:45 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:43:58 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:30:56 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,3 +68,7 @@ int	ft_ismin(int x, int y)
 	else
 		return (-1);
 }
+
+//get_color.c: default_color()
+//libft.h: ft_putendl_fd()
+//stdio.h: perror(), exit()

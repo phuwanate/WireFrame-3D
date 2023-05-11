@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:59:41 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:42:47 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:47:58 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,3 +88,5 @@ int	ft_atoi_base(char *s, int base)
 	}
 	return ((int)(result));
 }
+
+//libft.h : ft_toupper()

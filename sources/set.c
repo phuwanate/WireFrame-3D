@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:57:36 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:46:08 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:15:14 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,3 +80,7 @@ t_camera	*camera_set(t_fdf *fdf)
 	camera->y_offset = 0;
 	return (camera);
 }
+
+//libft: malloczero()
+//mlx.h: mlx_init(), mlx_new_window(), mlx_new_image(), mlx_get_data_addr()
+//fdf_utils.c: force_quit()

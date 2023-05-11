@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 17:41:50 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:45:48 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:56:45 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_point	plot_xyz(t_point point, t_fdf *fdf)
 {
 	point.x *= fdf->camera->scale;
 	point.y *= fdf->camera->scale;
-	point.z *= fdf->camera->scale / fdf->camera->z_height;
+	point.z *= fdf->camera->scale / fdf->camera->z_height / 2;
 	point.x -= (fdf->map->width * fdf->camera->scale) / 2;
 	point.y -= (fdf->map->height * fdf->camera->scale) / 2;
 	x_rotate(&point.y, &point.z, fdf->camera->alpha);
@@ -70,3 +70,6 @@ t_point	plot_xyz(t_point point, t_fdf *fdf)
 		+ fdf->camera->y_offset;
 	return (point);
 }
+
+//math.h: sin(), cos()
+//update (proj_type) in controls_utils.c : projection_type() 

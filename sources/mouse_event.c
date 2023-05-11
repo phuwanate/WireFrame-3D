@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:28:02 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:45:38 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:10:19 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,6 @@ int	mouse_update(int x, int y, void *param)
 	}
 	return (0);
 }
+
+//controls_utils.c: scale()
+//draw_map.c: draw_map()

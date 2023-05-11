@@ -6,7 +6,7 @@
 /*   By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:01:52 by plertsir          #+#    #+#             */
-/*   Updated: 2023/05/09 10:44:45 by plertsir         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:01:48 by plertsir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,6 @@ void	stack_to_arr(t_coord_z **z_stack, t_map *map)
 		free(top);
 	}
 }
+
+//libft.h : malloczero()
+//stack_reader.c: pick_stack()
