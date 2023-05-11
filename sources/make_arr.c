@@ -39,7 +39,7 @@ static int	update_zmin(int top, int min)
 void	stack_to_arr(t_coord_z **z_stack, t_map *map)
 {
 	t_coord_z	*top;
-	size_t		i;
+	ssize_t		i;
 	size_t		size;
 
 	size = map->width * map->height * sizeof(int);
