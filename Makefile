@@ -1,10 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: plertsir <plertsir@student.42bangkok.co    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/11 11:25:06 by plertsir          #+#    #+#              #
+#    Updated: 2023/05/11 11:25:36 by plertsir         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = fdf
 
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
 LIBRARIES = -lmlx -lm -lft -L$(LIBFT_DIRECTORY) -L$(MINILIBX_DIRECTORY) -framework OpenGL -framework AppKit
-#INCLUDES = -I$(HEADER_DIRECTORY) -I$(LIBFT_HEADER) -I$(MINILBX_HEADER)
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(LIBFT_HEADER) -I$(MINILBX_HEADER)
 
 LIBFT = $(LIBFT_DIRECTORY)libft.a
@@ -63,8 +73,3 @@ re:
 	@$(MAKE) all
 
 .PHONY: all clean fclean re
-
-
-
-
-
