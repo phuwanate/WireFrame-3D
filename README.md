@@ -9,3 +9,8 @@ Here the output :
 
 The bigger map mars.fdf :
 <img width="1921" alt="Screen Shot 2023-05-09 at 1 16 53 PM" src="https://user-images.githubusercontent.com/50509449/237010189-32586a27-7077-4624-b9d2-c28c06f207fd.png">
+
+How to run:
+1. use 'make' command to compile.
+2. ./fdf ./testmap/map.fdf
+3. to stop the program you can just press esc.
