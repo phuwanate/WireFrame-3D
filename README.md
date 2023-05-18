@@ -12,5 +12,5 @@ The bigger map mars.fdf :
 
 How to run:
 1. use 'make' command to compile.
-2. ./fdf ./testmap/map.fdf
+2. ./fdf ./test_maps/map.fdf
 3. to stop the program you can just press esc.
